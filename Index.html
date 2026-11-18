@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanjaynathan L – SAP ABAP Consultant</title>
+<meta name="description" content="Portfolio of Sanjaynathan L, SAP ABAP consultant for SD and MM on ECC and S/4HANA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2F6;--surface:#fff;--ink:#0F2A43;--muted:#4A6178;--line:#C9D5E1;--accent:#0A6E6E;--gold:#F0AB00;--code-bg:#0F2A43;--code-ink:#DCE8F3;--code-dim:#7F9BB5;--code-str:#7FD6C2;--shadow:0 10px 30px rgba(15,42,67,.12)}
+:root[data-theme="dark"]{--bg:#0B1620;--surface:#122434;--ink:#E6EEF6;--muted:#9DB2C6;--line:#24394D;--accent:#5CC8BA;--code-bg:#07111A;--shadow:0 10px 30px rgba(0,0,0,.4)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif;transition:background .3s,color .3s}
+a{color:var(--accent)}button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:20}
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.logo{font-weight:600;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-weight:500}
+nav a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:border-color .2s}
+nav a:hover,nav a.on{border-color:var(--gold)}
+.tools{display:flex;gap:8px}
+.pill{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:15px}
+.pill:hover{border-color:var(--accent)}
+.hero{display:grid;gap:40px;grid-template-columns:1fr 1.05fr;align-items:center;padding:64px 0 40px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}nav{display:none}}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--muted);margin:0 0 14px}
+.dot{width:9px;height:9px;border-radius:50%;background:#2FB26B;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,178,107,.6)}100%{box-shadow:0 0 0 10px rgba(47,178,107,0)}}
+h1{font-size:clamp(38px,6vw,60px);line-height:1.05;margin:0 0 10px;font-weight:600;letter-spacing:-.02em}
+.role{font-size:clamp(20px,2.6vw,24px);color:var(--accent);font-weight:500;margin:0 0 16px;min-height:1.5em}
+.role i{font-style:normal;border-right:3px solid var(--gold);padding-right:3px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{background:var(--gold);color:#0F2A43;border:0;border-radius:4px;padding:11px 20px;font-weight:600;text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.win{background:var(--code-bg);border-radius:8px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.win .t{display:flex;justify-content:space-between;padding:9px 16px;background:rgba(255,255,255,.06);color:var(--code-dim);font:500 13px "IBM Plex Mono",monospace}
+.code{margin:0;padding:20px 22px;color:var(--code-ink);font:400 clamp(13px,1.9vw,15.5px)/1.75 "IBM Plex Mono",monospace;min-height:14.5em;overflow-x:auto}
+.k{color:var(--gold)}.s{color:var(--code-str)}.c{color:var(--code-dim)}
+.cur{display:inline-block;width:.6em;height:1.1em;background:var(--gold);vertical-align:text-bottom;animation:bl 1.1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.run{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-top:1px solid rgba(255,255,255,.1)}
+.run small{color:var(--code-dim)}
+.run button{background:var(--gold);color:#0F2A43;border:0;border-radius:4px;padding:6px 14px;font-weight:600}
+.alv{display:none;margin:0;width:100%;border-collapse:collapse;font-size:14px;color:var(--code-ink)}
+.alv.show{display:table}.alv td,.alv th{padding:6px 16px;text-align:left;border-top:1px solid rgba(255,255,255,.1)}
+.alv th{color:var(--gold);font-weight:500;width:34%}
+.alv tr{animation:row .4s both}@keyframes row{from{opacity:0;transform:translateX(-10px)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;padding:24px 0 56px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+.stat b{display:block;font-size:34px;line-height:1.1;font-weight:600}.stat span{color:var(--muted);font-size:15px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:32px;line-height:1.2;margin:0 0 22px;font-weight:600}
+p{max-width:42em;margin:0 0 16px}
+.tools2{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:5px 16px;font-size:15px;transition:background .2s}
+.chip[aria-pressed="true"],.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input,textarea,select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);width:100%}
+#q{max-width:240px;padding:6px 14px;border-radius:99px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;text-align:left;width:100%;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,0),rgba(240,171,0,.16),transparent 70%);opacity:0;transition:opacity .25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}.card:hover::before{opacity:1}
+.card>*{position:relative}.card h3{margin:0 0 8px;font-size:20px;line-height:1.3}.card p{margin:0 0 12px;font-size:16px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-size:14px;padding:2px 10px;border:1px solid var(--line);border-radius:99px;background:var(--bg)}
+.more{color:var(--accent);font-weight:500;font-size:15px;display:block;margin-top:12px}
+.empty{color:var(--muted)}
+dialog{max-width:640px;width:calc(100% - 32px);border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:28px;box-shadow:var(--shadow)}
+dialog[open]{animation:pop .25s}@keyframes pop{from{opacity:0;transform:scale(.96)}}
+dialog::backdrop{background:rgba(7,17,26,.6)}
+dialog h3{margin:0 0 10px;font-size:24px}dialog ul.pts{padding-left:20px;margin:0 0 18px}
+.nav2{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.skills-g{display:flex;flex-wrap:wrap;gap:10px;min-height:120px}
+.skills-g span{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:8px 14px;animation:pop2 .4s both}
+@keyframes pop2{from{opacity:0;transform:translateY(10px)}}
+.tl{position:relative;padding-left:32px;max-width:640px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--gold);transform-origin:top;transform:scaleY(0);transition:transform 1.2s ease}
+.tl.in::before{transform:none}
+.tl div{position:relative;margin-bottom:28px}.tl div::before{content:"";position:absolute;left:-32px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--gold)}
+.tl strong{font-size:19px;display:block}.tl span{color:var(--muted)}
+form{display:grid;gap:14px;max-width:540px}label{display:grid;gap:4px;font-weight:500}
+.err{color:#C0392B;font-size:14px;min-height:1.2em;font-weight:400}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:99px;transition:transform .3s;z-index:30}
+.toast.show{transform:translate(-50%,0)}
+#pal{padding:0;max-width:520px;top:12vh}#pal input{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:16px 20px}
+#pal ul{list-style:none;margin:0;padding:6px;max-height:50vh;overflow:auto}
+#pal li button{width:100%;text-align:left;background:none;border:0;padding:10px 14px;border-radius:4px}
+#pal li button.sel,#pal li button:hover{background:var(--bg)}
+footer{padding:28px 0 44px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--d,0s),transform .7s var(--d,0s)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}.tl::before{transform:none}}
+.thumb{display:block;width:100%;height:auto;margin-bottom:16px;border-radius:4px}
+.about-g{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+@media(max-width:820px){.about-g{grid-template-columns:1fr}}
+.photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin-bottom:18px;display:block}
+.diagram svg{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+#da .thumb{margin-bottom:18px}
+[hidden]{display:none!important}
+.thanks{max-width:540px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px}
+.thanks strong{font-size:19px;display:block;margin-bottom:6px}.thanks p{margin:0 0 14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="#top">Sanjaynathan L</a>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+  <div class="tools"><button class="pill" id="kbtn" type="button" aria-label="Open command menu">Menu</button><button class="pill" id="theme" type="button" aria-label="Switch color theme">Dark</button></div>
+</div></header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <p class="status"><span class="dot"></span>Open to SAP ABAP developer roles</p>
+      <h1>Sanjaynathan L</h1>
+      <p class="role" aria-label="SAP ABAP Consultant"><i id="typed"></i></p>
+      <p>I build reports, interfaces and forms for SAP SD and MM, from OData services to Smart Forms, on ECC and S/4HANA.</p>
+      <div class="btns"><a class="btn" href="#projects">View projects</a><a class="btn alt" href="Sanjaynathan_Updated_Resume.pdf" download>Download resume</a></div>
+    </div>
+    <div class="win">
+      <div class="t"><span>SE38 · ABAP Editor</span><span>ZSANJAYNATHAN_L</span></div>
+      <pre class="code" id="code" aria-label="ABAP-style introduction"></pre>
+      <table class="alv" id="alv" aria-live="polite"></table>
+      <div class="run"><small>Press F8 to run</small><button id="run" type="button">Execute</button></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat rv"><b data-n="2">0</b><span>Years of experience</span></div>
+    <div class="stat rv" style="--d:.1s"><b data-n="2">0</b><span>Modules: SD and MM</span></div>
+    <div class="stat rv" style="--d:.2s"><b data-n="2">0</b><span>Client projects</span></div>
+    <div class="stat rv" style="--d:.3s"><b data-n="4">0</b><span>Featured builds</span></div>
+  </div>
+
+  <section id="about" class="rv">
+    <h2>About</h2>
+    <div class="about-g"><div>
+    <img class="photo" src="Profile.png" alt="Sanjaynathan L" onerror="this.remove()">
+    <p>I’m an SAP ABAP consultant with two years of experience in the SD and MM modules. I’ve worked on support and implementation projects for AGS and Reliance Industry, on ECC and S/4HANA.</p>
+    <p>Day to day I write RICEF objects, extend IDocs and build OData services. I’m comfortable debugging a problem down to the line that causes it.</p>
+    </div>
+    <div class="diagram"><svg viewBox="0 0 420 230" role="img" aria-label="My work sits between SAP ECC or S/4HANA and the apps and partner systems that use its data" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans,sans-serif">
+      <text x="210" y="32" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">Where my work sits</text>
+      <path d="M122 110H152M268 110H298" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><path d="M146 104l8 6-8 6M292 104l8 6-8 6" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+      <rect x="12" y="68" width="110" height="84" rx="6" fill="var(--code-bg)" stroke="var(--gold)" stroke-width="2"/>
+      <text x="67" y="105" text-anchor="middle" font-size="14" font-weight="600" fill="var(--code-ink)">SAP ECC</text><text x="67" y="126" text-anchor="middle" font-size="14" font-weight="600" fill="var(--code-ink)">S/4HANA</text>
+      <rect x="155" y="68" width="110" height="84" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="210" y="105" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">OData, IDoc</text><text x="210" y="126" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">RFC, BAPI</text>
+      <rect x="298" y="68" width="110" height="84" rx="6" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+      <text x="353" y="105" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">Apps and</text><text x="353" y="126" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">partners</text>
+      <g font-size="13" fill="var(--muted)" text-anchor="middle"><text x="67" y="182">Reports, exits, forms</text><text x="210" y="182">Interfaces</text><text x="353" y="182">Users and systems</text></g>
+    </svg></div></div>
+  </section>
+
+  <section id="projects">
+    <h2 class="rv">Projects</h2>
+    <div class="tools2"><div id="chips" role="group" aria-label="Filter projects" style="display:flex;gap:8px;flex-wrap:wrap"></div><input id="q" type="search" placeholder="Search projects" aria-label="Search projects"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="skills">
+    <h2 class="rv">Skills</h2>
+    <div class="tools2" id="stabs" role="tablist" aria-label="Skill groups"></div>
+    <div class="skills-g" id="sg" role="tabpanel"></div>
+  </section>
+
+  <section id="experience">
+    <h2 class="rv">Experience</h2>
+    <div class="tl" id="tl">
+      <div><strong>Trainee, Vriksham Soft Tech Pvt. Ltd.</strong><span>Working on SAP IDoc extensions and OData Services</span></div>
+      <div><strong>Support and implementation projects</strong><span>Clients: Tech Mahindra and Reliance Industry.</span></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="rv">Contact</h2>
+    <p>Send me a message and it arrives straight in my inbox, or copy my address.</p>
+    <form id="form" novalidate>
+      <label>Your name<input name="name" autocomplete="name"><span class="err" data-for="name"></span></label>
+      <label>Your email<input name="email" type="email" autocomplete="email"><span class="err" data-for="email"></span></label>
+      <label>I’m reaching out about<select name="reason"><option>Job opportunity</option><option>Project collaboration</option><option>Question about my work</option><option>Something else</option></select></label>
+      <label>Company (optional)<input name="company" autocomplete="organization"></label>
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <label>Message<textarea name="msg" rows="4"></textarea><span class="err" data-for="msg"></span></label>
+      <div class="btns" style="margin-top:0"><button class="btn" type="submit">Send message</button><button class="btn alt" type="button" id="copy">Copy email address</button></div>
+    </form>
+    <div class="thanks" id="thanks" hidden role="status"><strong>Thank you, your message was sent.</strong><p>It has reached my inbox and I will reply to the email address you gave.</p><button class="btn alt" id="again" type="button">Send another message</button></div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Sanjaynathan L</div></footer>
+
+<dialog id="dlg" aria-labelledby="dt"><div id="da"></div><h3 id="dt"></h3><p id="ds"></p><ul class="pts" id="dp"></ul><ul class="tags" id="dg"></ul>
+  <div class="nav2"><button class="btn alt" id="prev" type="button">Previous</button><button class="btn alt" id="next" type="button">Next</button><button class="btn" id="close" type="button">Close</button></div></dialog>
+<dialog id="pal" aria-label="Command menu"><input id="pi" placeholder="Type a command or section" aria-label="Command"><ul id="pl"></ul></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ===== EDIT THIS SECTION ===== */
+const EMAIL = "sanjay.sap45@gmail.com";
+const WEB3FORMS_KEY = "8003acb4-e741-4dde-84fd-cb1445204f09"; // free key from web3forms.com, makes the form send email automatically
+const ROLES = ["SAP ABAP Consultant","SD and MM Specialist","OData and RICEF Developer"];
+const PROJECTS = [
+ {title:"Purchase order creation report",cats:["Reports","Forms"],sum:"One report creates purchase orders with either BDC or BAPI, chosen by a radio button.",
+  pts:["Radio button switches between BDC and BAPI creation","Created POs listed in an ALV grid","Output printed through Smart Form and Adobe Form"],tags:["BDC","BAPI","ALV","Smart Forms","Adobe Forms"]},
+ {title:"Travel allowance and approval report",cats:["Reports"],sum:"An ALV report for the Sales and HR teams to record employee travel allowances.",
+  pts:["HR and Finance approve each request","Overlapping travel dates are blocked","Data stored in a custom database table"],tags:["ALV","Custom table","Approval"]},
+ {title:"Smart Form with uploaded image over OData",cats:["OData","Forms"],sum:"A Smart Form is returned to the front end through GET_STREAM.",
+  pts:["BMP image uploaded with CREATE_STREAM","Image saved in a custom database table","Image displayed inside the Smart Form"],tags:["OData","GET_STREAM","CREATE_STREAM","Smart Forms"]},
+ {title:"ETag support for an address service",cats:["OData"],sum:"Optimistic locking on the ZSN_ADRC_SRV service, so users can’t silently overwrite each other’s changes.",
+  pts:["Built in SEGW project ZSN_ADRC","Entity adrc on table ZSN_ADRC","Tested in the Gateway Client (/IWFND/GW_CLIENT)"],tags:["SEGW","ETag","OData"]}
+];
+const SKILLS = {
+ "RICEF":["Reports and ALV","RFC","IDoc","OData Services","BDC","BAPI","User exits","Customer exits","BADI","Smart Forms","Adobe Forms"],
+ "Additionals":["Object-oriented ABAP","Debugging","Application log","Authority checks","Change documents","Table maintenance generator events"],
+ "Platforms":["SAP ECC","SAP S/4HANA","SD module","MM module"]
+};
+/* ============================= */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2000)};
+const go=id=>document.getElementById(id).scrollIntoView();
+
+/* theme */
+const root=document.documentElement,tb=$("#theme");let sv=null;try{sv=localStorage.getItem("theme")}catch(e){}
+function setTheme(t){root.dataset.theme=t;tb.textContent=t==="dark"?"Light":"Dark";try{localStorage.setItem("theme",t)}catch(e){}}
+setTheme(sv||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+tb.onclick=()=>setTheme(root.dataset.theme==="dark"?"light":"dark");
+
+/* scroll progress, reveal, counters, active nav */
+addEventListener("scroll",()=>{const h=document.documentElement;$("#prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");
+ const b=e.target.querySelector("[data-n]");if(b&&!b.done){b.done=1;const n=+b.dataset.n;let i=0;const s=setInterval(()=>{b.textContent=Math.min(++i,n);if(i>=n)clearInterval(s)},reduce?0:350)}
+ io.unobserve(e.target)}),{threshold:.2});
+const observe=()=>$$(".rv,.tl").forEach(el=>io.observe(el));observe();
+const links=$$("nav a");
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.hash==="#"+e.target.id))}),{rootMargin:"-40% 0px -55% 0px"}).observe&&$$("main section").forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.hash==="#"+s.id))}),{rootMargin:"-40% 0px -55% 0px"}).observe(s));
+
+/* rotating role text */
+(function(){const el=$("#typed");let r=0,c=0,del=false;if(reduce){el.textContent=ROLES[0];el.style.border="0";return}
+ (function t(){const w=ROLES[r];c+=del?-1:1;el.textContent=w.slice(0,c);let d=del?35:70;
+  if(!del&&c===w.length){del=true;d=1600}else if(del&&c===0){del=false;r=(r+1)%ROLES.length;d=300}setTimeout(t,d)})()})();
+
+/* hero code + execute */
+const lines=['<span class="c">*&amp; Portfolio</span>','<span class="k">REPORT</span> zsanjaynathan_l.','',
+'<span class="k">DATA</span>: lv_role  <span class="k">TYPE string VALUE</span> <span class="s">\'SAP ABAP Consultant\'</span>,','      lv_years <span class="k">TYPE i VALUE</span> <span class="s">2</span>,',
+'      lv_scope <span class="k">TYPE string VALUE</span> <span class="s">\'SD, MM\'</span>.','','<span class="k">START-OF-SELECTION</span>.','  <span class="k">PERFORM</span> show_profile.'];
+const html=lines.join("\n"),code=$("#code"),cur='<span class="cur"></span>';
+(function(){let i=0;if(reduce){code.innerHTML=html+cur;return}
+ (function t(){let n=0;while(n<3&&i<html.length){if(html[i]==="<"){i=html.indexOf(">",i)+1;continue}if(html[i]==="&")i=html.indexOf(";",i)+1;else i++;n++}
+  code.innerHTML=html.slice(0,i)+cur;if(i<html.length)setTimeout(t,18)})()})();
+$("#run").onclick=()=>{const rows=[["Name","Sanjaynathan L"],["Role","SAP ABAP Consultant"],["Experience","2 years, SD and MM"],["Systems","ECC and S/4HANA"],["Clients","Tech Mahindra, Reliance Industry"],["Interfaces","RFC, IDoc, OData"]];
+ const a=$("#alv");a.innerHTML=rows.map((r,i)=>`<tr style="animation-delay:${i*.12}s"><th>${r[0]}</th><td>${r[1]}</td></tr>`).join("");a.classList.add("show")};
+addEventListener("keydown",e=>{if(e.key==="F8"){e.preventDefault();$("#run").click()}});
+
+/* project illustrations (inline SVG, edit or replace freely) */
+const W=(l,b)=>`<svg class="thumb" viewBox="0 0 400 140" role="img" aria-label="${l}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans,sans-serif"><rect width="400" height="140" rx="4" fill="var(--bg)"/>${b}</svg>`;
+const cal=()=>{let o="";for(let r=0;r<3;r++)for(let c=0;c<7;c++){const hi=r===1&&c>=1&&c<=4;o+=`<rect x="${24+c*34}" y="${22+r*34}" width="28" height="28" rx="3" fill="${hi?"var(--gold)":"var(--surface)"}" stroke="var(--line)"/>`}return o};
+const badge=(y,t)=>`<circle cx="330" cy="${y}" r="14" fill="var(--accent)"/><path d="M323 ${y}l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="356" y="${y+5}" font-size="13" font-weight="600" fill="var(--ink)">${t}</text>`;
+const user=y=>`<circle cx="48" cy="${y}" r="11" fill="var(--accent)"/><path d="M28 ${y+34}a20 18 0 0 1 40 0z" fill="var(--accent)"/>`;
+const ART=[
+ W("Purchase order report: ALV grid and printed order",`<rect x="24" y="22" width="230" height="96" rx="4" fill="var(--surface)" stroke="var(--line)"/><rect x="24" y="22" width="230" height="22" rx="4" fill="var(--code-bg)"/><rect x="34" y="30" width="44" height="6" fill="var(--gold)"/><rect x="120" y="30" width="44" height="6" fill="var(--gold)"/><rect x="190" y="30" width="44" height="6" fill="var(--gold)"/><path d="M24 62H254M24 80H254M24 98H254M110 22V118M180 22V118" stroke="var(--line)"/><path d="M34 53h56M120 53h40M190 53h44M34 71h56M120 71h40M190 71h44M34 89h56M120 89h40M190 89h44M34 107h56M120 107h40M190 107h44" stroke="var(--muted)" stroke-width="3" stroke-linecap="round" opacity=".5"/><rect x="290" y="18" width="84" height="104" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/><path d="M302 40H362M302 56H362M302 72H340" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/><circle cx="348" cy="104" r="12" fill="var(--gold)"/><text x="348" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="#0F2A43">PO</text>`),
+ W("Travel allowance report: calendar with approvals",`${cal()}${badge(44,"HR")}${badge(96,"Finance")}`),
+ W("Smart Form with an uploaded image",`<rect x="24" y="46" width="64" height="48" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/><text x="56" y="75" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">BMP</text><path d="M96 70H134M126 63l9 7-9 7" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><rect x="146" y="14" width="112" height="112" rx="4" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/><rect x="158" y="26" width="88" height="48" rx="3" fill="var(--bg)"/><circle cx="178" cy="42" r="7" fill="var(--gold)"/><path d="M158 74l26-24 18 16 12-10 32 18z" fill="var(--accent)"/><path d="M158 92H246M158 106H220" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/><path d="M268 70H306" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><path ${""}d="M298 63l9 7-9 7" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><ellipse cx="344" cy="42" rx="32" ry="10" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/><path d="M312 42v54a32 10 0 0 0 64 0V42" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>`),
+ W("ETag: two users and one protected record",`${user(26)}${user(82)}<path d="M80 40L180 66M80 96L180 74" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><rect x="180" y="62" width="30" height="24" rx="4" fill="var(--gold)"/><path d="M186 62v-8a9 9 0 0 1 18 0v8" fill="none" stroke="var(--gold)" stroke-width="3"/><text x="195" y="108" text-anchor="middle" font-size="12" fill="var(--muted)">ETag check</text><path d="M214 74H282" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><ellipse cx="320" cy="42" rx="36" ry="11" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/><path d="M284 42v56a36 11 0 0 0 72 0V42" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>`)
+];
+const art=p=>ART[PROJECTS.indexOf(p)]||"";
+
+/* projects */
+const cats=["All",...new Set(PROJECTS.flatMap(p=>p.cats))];let act="All",list=[],cur_i=0;
+function chips(){$("#chips").innerHTML="";cats.forEach(c=>{const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c;b.setAttribute("aria-pressed",c===act);b.onclick=()=>{act=c;chips();grid()};$("#chips").appendChild(b)})}
+function grid(){const q=$("#q").value.toLowerCase(),g=$("#grid");g.innerHTML="";
+ list=PROJECTS.filter(p=>(act==="All"||p.cats.includes(act))&&(p.title+p.sum+p.tags.join(" ")).toLowerCase().includes(q));
+ if(!list.length){g.innerHTML='<p class="empty">No projects match. Clear the search or pick another filter.</p>';return}
+ list.forEach((p,i)=>{const b=document.createElement("button");b.type="button";b.className="card rv";b.style.setProperty("--d",i*.08+"s");
+  b.innerHTML=art(p)+"<h3></h3><p></p><ul class='tags'></ul><span class='more'>View details</span>";b.querySelector("h3").textContent=p.title;b.querySelector("p").textContent=p.sum;
+  p.tags.forEach(t=>{const l=document.createElement("li");l.textContent=t;b.querySelector(".tags").appendChild(l)});
+  b.onclick=()=>show(i);b.onpointermove=e=>{const r=b.getBoundingClientRect();b.style.setProperty("--x",e.clientX-r.left+"px");b.style.setProperty("--y",e.clientY-r.top+"px")};g.appendChild(b)});observe()}
+function show(i){cur_i=(i+list.length)%list.length;const p=list[cur_i];$("#da").innerHTML=art(p);$("#dt").textContent=p.title;$("#ds").textContent=p.sum;
+ const f=(el,a)=>{el.innerHTML="";a.forEach(x=>{const l=document.createElement("li");l.textContent=x;el.appendChild(l)})};f($("#dp"),p.pts);f($("#dg"),p.tags);if(!$("#dlg").open)$("#dlg").showModal()}
+$("#prev").onclick=()=>show(cur_i-1);$("#next").onclick=()=>show(cur_i+1);$("#close").onclick=()=>$("#dlg").close();
+$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")e.target.close()});
+$("#dlg").addEventListener("keydown",e=>{if(e.key==="ArrowRight")show(cur_i+1);if(e.key==="ArrowLeft")show(cur_i-1)});
+$("#q").oninput=grid;chips();grid();
+
+/* skills tabs */
+function skills(k){$$("#stabs .chip").forEach(b=>{b.classList.toggle("on",b.textContent===k);b.setAttribute("aria-selected",b.textContent===k)});
+ $("#sg").innerHTML=SKILLS[k].map((s,i)=>`<span style="animation-delay:${i*.05}s">${s}</span>`).join("")}
+Object.keys(SKILLS).forEach(k=>{const b=document.createElement("button");b.type="button";b.className="chip";b.setAttribute("role","tab");b.textContent=k;b.onclick=()=>skills(k);$("#stabs").appendChild(b)});skills("RICEF");
+
+/* contact */
+$("#form").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);let ok=true;
+ const chk=(n,bad,m)=>{const el=$(`[data-for=${n}]`);el.textContent=bad?m:"";if(bad)ok=false};
+ chk("name",!f.get("name").trim(),"Enter your name.");chk("email",!/^\S+@\S+\.\S+$/.test(f.get("email")),"Enter a valid email address.");chk("msg",f.get("msg").trim().length<10,"Write at least 10 characters.");
+ if(!ok)return;
+ if(f.get("botcheck"))return;
+ const subj="Portfolio enquiry ("+f.get("reason")+") from "+f.get("name");
+ if(!WEB3FORMS_KEY){location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(f.get("msg")+"\n\nFrom: "+f.get("name")+" ("+f.get("email")+")");return}
+ const btn=e.target.querySelector("[type=submit]");btn.disabled=true;btn.textContent="Sending...";
+ fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({access_key:WEB3FORMS_KEY,subject:subj,from_name:"Sanjaynathan L Portfolio",replyto:f.get("email"),name:f.get("name"),email:f.get("email"),company:f.get("company")||"Not given",reason:f.get("reason"),message:f.get("msg")})})
+  .then(r=>r.json()).then(d=>{if(!d.success)throw new Error(d.message);e.target.reset();e.target.hidden=true;$("#thanks").hidden=false})
+  .catch(()=>toast("Could not send. Please email "+EMAIL))
+  .finally(()=>{btn.disabled=false;btn.textContent="Send message"})};
+const copy=()=>{(navigator.clipboard?navigator.clipboard.writeText(EMAIL):Promise.reject()).then(()=>toast("Email address copied")).catch(()=>toast(EMAIL))};
+$("#copy").onclick=copy;
+$("#again").onclick=()=>{$("#thanks").hidden=true;$("#form").hidden=false};
+
+/* command palette */
+const CMDS=[["Go to About",()=>go("about")],["Go to Projects",()=>go("projects")],["Go to Skills",()=>go("skills")],["Go to Experience",()=>go("experience")],["Go to Contact",()=>go("contact")],
+ ["Toggle dark mode",()=>tb.click()],["Copy email address",copy],["Download resume",()=>{const a=document.createElement("a");a.href="Sanjaynathan_Updated_Resume.pdf";a.download="";a.click()}]];
+const pal=$("#pal"),pi=$("#pi"),pl=$("#pl");let sel=0,vis=[];
+function pr(){const q=pi.value.toLowerCase();vis=CMDS.filter(c=>c[0].toLowerCase().includes(q));sel=Math.min(sel,Math.max(vis.length-1,0));
+ pl.innerHTML="";vis.forEach((c,i)=>{const li=document.createElement("li"),b=document.createElement("button");b.type="button";b.textContent=c[0];b.className=i===sel?"sel":"";b.onclick=()=>run(i);li.appendChild(b);pl.appendChild(li)})}
+function run(i){const c=vis[i];if(!c)return;pal.close();c[1]()}
+function openPal(){pi.value="";sel=0;pr();pal.showModal();pi.focus()}
+$("#kbtn").onclick=openPal;pi.oninput=pr;
+pi.onkeydown=e=>{if(e.key==="ArrowDown"){e.preventDefault();sel=(sel+1)%vis.length;pr()}else if(e.key==="ArrowUp"){e.preventDefault();sel=(sel-1+vis.length)%vis.length;pr()}else if(e.key==="Enter")run(sel)};
+pal.addEventListener("click",e=>{if(e.target===pal)pal.close()});
+addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();pal.open?pal.close():openPal()}});
+</script>
+</body>
+</html>
